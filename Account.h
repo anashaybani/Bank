@@ -1,11 +1,13 @@
 #pragma once
 #include <iostream>
+#include <string>
 using namespace std;
 
 
 class Account
 {
 private:
+    string IDnum;
     string cardNumber;
     string accountNumber;
     string shabaNumber;
@@ -21,7 +23,7 @@ public:
     Account();
     virtual ~Account();
 
-    
+    string getIDnum() const;
     string getCardNumber() const;
     string getAccountNumber() const;
     string getShabaNumber() const;
@@ -44,17 +46,20 @@ public:
     void setDynamicSecondPassword(const string& pw);
 
 
+    string generateRandomDigits(int length) const;
+
+    string display() const;
+
+
     virtual string accountType() const;
     virtual void calculateInterest() const;
     virtual void deleteAccount();
-
-    string generateRandomDigits(int length) const;
 
 
     void setAccount(const string& ID);
     void editAccount();
     void showAccount() const;
-
+    void cardToCard();
 
 };
 

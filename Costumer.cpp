@@ -1,4 +1,5 @@
 #include "Costumer.h"
+#include "globals.h"
 
 
 Costumer::Costumer() : User(), accountCount(0) {
@@ -45,16 +46,19 @@ void Costumer::addAccount(){
             JariAccount j;
             accounts[accountCount] = new JariAccount();
             accounts[accountCount]->setAccount(getNationalCode());
+            ACCOUNTS.add(accounts[accountCount]);
             accountCount++;
         }
         else if (cho == 2) {
             accounts[accountCount] = new LongTermAccount();
             accounts[accountCount]->setAccount(getNationalCode());
+            ACCOUNTS.add(accounts[accountCount]);
             accountCount++;
         }
         else if (cho == 3) {
             accounts[accountCount] = new GharzolHasanehAccount();
             accounts[accountCount]->setAccount(getNationalCode());
+            ACCOUNTS.add(accounts[accountCount]);
             accountCount++;
         }
         else{ cout << endl << "wrong imput ! "; }
@@ -100,11 +104,13 @@ void Costumer::deleteAccounts(){
         cin >> num;
         if (num >= 1 && num <= accountCount) {
             accounts[num -1 ]->deleteAccount();
+            COSTUMERS.remove(accounts[num - 1]->getCardNumber());
             accounts[num-1] = nullptr;
             for (int i = num; i < accountCount; i++) {
                 accounts[i - 1] = accounts[i];
             }
             accountCount--;
+            cout << endl << " Account removed . ";
         }
 
     }
@@ -112,6 +118,18 @@ void Costumer::deleteAccounts(){
         cout << endl << "no account ! ";
     }
 }
+
+
+void Costumer::delete_all_Accounts(){
+    for (int i = 0; i < accountCount; i++) {
+        accounts[i]->deleteAccount();
+        COSTUMERS.remove(accounts[i]->getCardNumber());
+        accounts[i] = nullptr;
+    }
+    cout << endl << " Accounts removed . ";
+
+}
+
 
 
 void Costumer::showAccounts() const{
@@ -127,6 +145,20 @@ void Costumer::showAccounts() const{
     }
 }
 
+
+
+void Costumer::monyTransfer() {
+    cout << endl << "Enter origin card number : ";
+    string cNum;
+    cin >> cNum;
+    for (int i = 0; i < accountCount; i++) {
+        if (accounts[i]->getCardNumber() == cNum) {
+            accounts[i]->cardToCard();
+            return;
+        }
+    }
+    cout << endl << " card not found ! ";
+}
 
 
 

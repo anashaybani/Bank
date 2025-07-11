@@ -1,6 +1,8 @@
 #include "Account.h"
+#include "globals.h"
 
 Account::Account() :
+	IDnum(""),
 	cardNumber(""),
 	accountNumber(""),
 	shabaNumber(""),
@@ -12,7 +14,7 @@ Account::Account() :
 	dynamicSecondPassword("") {}
 Account::~Account() {}
 
-
+string Account::getIDnum() const { return	IDnum; }
 string Account::getCardNumber() const { return cardNumber; }
 string Account::getAccountNumber() const { return accountNumber; }
 string Account::getShabaNumber() const { return shabaNumber; }
@@ -69,6 +71,86 @@ void Account::deleteAccount() { this->~Account(); }
 
 
 
+
+
+string  Account::display() const {
+	return cardNumber;
+}
+
+
+
+
+
+void Account::cardToCard() {
+	string destination;
+	cout << "\nEnter destination card number: ";
+	cin >> destination;
+
+	Account* dest = ACCOUNTS.search(destination);
+	if (!dest) {
+		cout << "\nDestination card not found!";
+		return;
+	}
+
+	User * Pdest = USERS.search(dest->getIDnum());
+	cout << "\nReceiver: " << Pdest->getFirstName() << " " << Pdest->getLastName();
+
+	cout << "\nEnter today's date (YYYYMMDD): ";
+	string date;
+	cin >> date;
+
+	if (date > this->getExpirationDate()) {
+		cout << "\nYour card has expired!";
+		return;
+	}
+
+	double amount;
+	cout << "\nEnter amount: ";
+	cin >> amount;
+
+	double total = amount * 1.01; 
+
+	if (amount > 3000000 || total > balance) {
+		cout << "\nAmount exceeds limit or insufficient funds!";
+		return;
+	}
+
+	string pass;
+	if (amount <= 100000) {
+		cout << "\nEnter static second password: ";
+		cin >> pass;
+
+		if (pass != this->getStaticSecondPassword()) {
+			cout << "\nWrong password!";
+			return;
+		}
+	}
+	else {
+		string DSP = generateRandomDigits(6);
+		setDynamicSecondPassword(DSP);
+		cout << "\nYour dynamic password: " << DSP;
+
+		cout << "\nEnter dynamic password: ";
+		cin >> pass;
+
+		if (pass != DSP) {
+			cout << "\nWrong dynamic password!";
+			return;
+		}
+	}
+
+	
+	balance -= total;
+	dest->setBalance(dest->getBalance() + amount);
+
+	cout << "\nTransfer successful!";
+}
+
+
+
+
+
+
 string Account::generateRandomDigits(int length) const {
 	string result;
 	for (int i = 0; i < length; ++i) {
@@ -80,6 +162,7 @@ string Account::generateRandomDigits(int length) const {
 
 
 void Account::setAccount(const string& ID) {
+	this->IDnum = ID;
 	cardNumber = generateRandomDigits(6) + ID;
 	shabaNumber = generateRandomDigits(14) + ID;
 	accountNumber = ID.substr(4, 6);
@@ -93,7 +176,7 @@ void Account::setAccount(const string& ID) {
 }
 
 void Account::editAccount() {
-	cout << endl << "change : 1.pinCode    2.Second Password  ";
+	cout << endl << "edit : 1.pinCode    2.Second Password  ";
 	int num;
 	cin >> num;
 	if(num == 1){
@@ -119,3 +202,6 @@ void Account::showAccount() const {
 	cout << endl << "pinCode :  " << pinCode;
 	cout << endl << "Second Password :  " << staticSecondPassword;
 }
+
+
+

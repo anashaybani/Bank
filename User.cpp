@@ -26,6 +26,11 @@ void User::setUsername(const string& uName){ username = uName; }
 void User::setPassword(const string& pass){ password = pass; }
 
 
+string User::display() const {
+	return nationalCode;
+}
+
+
 
 void User::setUser(){
 
@@ -40,5 +45,30 @@ void User::setUser(){
 	username = nationalCode;
 	cout << endl << "Enter password  : ";
 	cin >> password;
+
+}
+
+
+
+
+void User::editUser(){
+	int co;
+	cout << endl << "edit :  1.first name    2.last name    3.password    0.Exit";
+	cin >> co;
+	if(co == 1){
+		cout << endl << "Enter first name  : ";
+		getline(cin, this->firstName);
+	}
+	else if(co == 2){
+		cout << endl << "Enter last name  : ";
+		getline(cin, this->lastName);
+	}
+	else if (co == 3) {
+		cout << endl << "Enter password  : ";
+		cin >> password;
+	}
+	else{
+		return;
+	}
 
 }

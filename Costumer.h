@@ -1,8 +1,11 @@
 #pragma once
+#include <iostream>
+using namespace std;
 #include "User.h"
-#include "JariAccount.h"
 #include "GharzolHasanehAccount.h"
 #include "LongTermAccount.h"
+#include "JariAccount.h"
+
 
 class Costumer : public User
 {		
@@ -26,7 +29,9 @@ public:
 	void addAccount();
 	void editAccounts();
 	void deleteAccounts();
+	void delete_all_Accounts();
 	void showAccounts() const;
+	void monyTransfer();
 
 };
 

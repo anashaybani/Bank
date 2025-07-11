@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include "Account.h"
+
+
 
 class User
 {
@@ -33,7 +34,9 @@ public:
     void setUsername(const string& uName);
     void setPassword(const string& pass);
 
+    string display() const;
 
     void setUser();
+    void editUser();
 };
 

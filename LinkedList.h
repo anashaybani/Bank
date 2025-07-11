@@ -1,7 +1,6 @@
 #pragma once
-
-
 #include <iostream>
+#include "globals.h"
 using namespace std;
 
 template <typename T>
@@ -47,12 +46,12 @@ public:
     }
 
     
-    bool remove(bool (*match)(T, string), string key) {
+    bool remove(string Num) {
         Node<T>* current = head;
         Node<T>* prev = nullptr;
 
         while (current) {
-            if (match(current->data, key)) {
+            if (current->data->display() == Num) {
                 if (prev)
                     prev->next = current->next;
                 else
@@ -68,24 +67,24 @@ public:
     }
 
     
-    T* search(bool (*match)(T, string), string key) {
+    T search(string Num) {
         Node<T>* current = head;
         while (current) {
-            if (match(current->data, key))
-                return &(current->data);
+            if (current->data->display() == Num)
+                return current->data;
             current = current->next;
         }
         return nullptr;
     }
 
    
-    void display(void (*printFunc)(T)) {
-        Node<T>* current = head;
-        while (current) {
-            printFunc(current->data);
-            current = current->next;
-        }
-    }
+    //void display(void (*printFunc)(T)) {
+    //    Node<T>* current = head;
+    //    while (current) {
+    //        printFunc(current->data);
+    //        current = current->next;
+    //    }
+    //}
 
     bool isEmpty() {
         return head == nullptr;

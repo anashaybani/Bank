@@ -10,7 +10,7 @@ public:
     ~JariAccount();
 
 
-    void deleteAccount();
+    void deleteAccount()override;
 
     void calculateInterest() const override;
 
