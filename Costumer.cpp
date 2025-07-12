@@ -104,7 +104,7 @@ void Costumer::deleteAccounts(){
         cin >> num;
         if (num >= 1 && num <= accountCount) {
             accounts[num -1 ]->deleteAccount();
-            COSTUMERS.remove(accounts[num - 1]->getCardNumber());
+            ACCOUNTS.remove(accounts[num - 1]->getCardNumber());
             accounts[num-1] = nullptr;
             for (int i = num; i < accountCount; i++) {
                 accounts[i - 1] = accounts[i];
@@ -123,7 +123,7 @@ void Costumer::deleteAccounts(){
 void Costumer::delete_all_Accounts(){
     for (int i = 0; i < accountCount; i++) {
         accounts[i]->deleteAccount();
-        COSTUMERS.remove(accounts[i]->getCardNumber());
+        ACCOUNTS.remove(accounts[i]->getCardNumber());
         accounts[i] = nullptr;
     }
     cout << endl << " Accounts removed . ";
@@ -147,17 +147,11 @@ void Costumer::showAccounts() const{
 
 
 
-void Costumer::monyTransfer() {
-    cout << endl << "Enter origin card number : ";
-    string cNum;
-    cin >> cNum;
-    for (int i = 0; i < accountCount; i++) {
-        if (accounts[i]->getCardNumber() == cNum) {
-            accounts[i]->cardToCard();
-            return;
-        }
-    }
-    cout << endl << " card not found ! ";
+void Costumer::moneyTransfer() {
+    CardToCard ctc;
+    ctc.setCardToCard();
+    CardToCardS.add(&ctc);
+
 }
 
 

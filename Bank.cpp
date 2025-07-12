@@ -8,11 +8,6 @@ using namespace std;
 #include "JariAccount.h"
 
 
- LinkedList<Account*> ACCOUNTS;
- LinkedList<User*> USERS;
- LinkedList<Costumer*> COSTUMER;
- LinkedList<Admin*> ADMIN;
-
 
 
 int main()

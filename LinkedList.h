@@ -1,17 +1,9 @@
 #pragma once
 #include <iostream>
-#include "globals.h"
+#include "Node.h"
+#include "User.h"
+#include "Account.h"
 using namespace std;
-
-template <typename T>
-class Node {
-public:
-    T data;
-    Node* next;
-
-    Node(T val) : data(val), next(nullptr) {}
-};
-
 
 template <typename T>
 class LinkedList

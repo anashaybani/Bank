@@ -59,7 +59,6 @@ public:
     void setAccount(const string& ID);
     void editAccount();
     void showAccount() const;
-    void cardToCard();
 
 };
 

@@ -31,7 +31,7 @@ public:
 	void deleteAccounts();
 	void delete_all_Accounts();
 	void showAccounts() const;
-	void monyTransfer();
+	void moneyTransfer();
 
 };
 
