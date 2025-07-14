@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CustomerOptionsWindow</class>
+ <widget class="QWidget" name="CustomerOptionsWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="customerButton">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>50</y>
+     <width>100</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>customer</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cardButton">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>50</y>
+     <width>100</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>card</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

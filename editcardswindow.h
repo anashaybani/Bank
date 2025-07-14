@@ -1,0 +1,34 @@
+#ifndef EDITCARDSWINDOW_H
+#define EDITCARDSWINDOW_H
+
+
+#include "../Bank/Bank/Costumer.h"
+#include "../Bank/Bank/Account.h"
+#include "../Bank/Bank/globals.h"
+#include "../Bank/Bank/GharzolHasanehAccount.h"
+#include "../Bank/Bank/LongTermAccount.h"
+#include "../Bank/Bank/JariAccount.h"
+
+
+
+#include <QDialog>
+
+namespace Ui {
+class EditCardsWindow;
+}
+
+class EditCardsWindow : public QDialog
+{
+    Q_OBJECT
+
+public:
+    explicit EditCardsWindow(QWidget *parent = nullptr);
+    ~EditCardsWindow();
+
+private:
+    Ui::EditCardsWindow *ui;
+
+    void on_editSelectedButton_clicked();
+};
+
+#endif // EDITCARDSWINDOW_H
