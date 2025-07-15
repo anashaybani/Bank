@@ -29,23 +29,23 @@ void TransferWindow::on_transferButton_clicked()
 
     Account* origin = ACCOUNTS.search(originCard.toStdString());
     if (!origin) {
-        ui->statusLabel->setText("کارت مبدا پیدا نشد!");
+        ui->statusLabel->setText("Orgin card not found!");
         return;
     }
 
     if (origin->getCVV2() != cvv2.toStdString()) {
-        ui->statusLabel->setText("CVV2 اشتباه است!");
+        ui->statusLabel->setText("Incorrect CVV2 !");
         return;
     }
 
     Account* dest = ACCOUNTS.search(destCard.toStdString());
     if (!dest) {
-        ui->statusLabel->setText("کارت مقصد پیدا نشد!");
+        ui->statusLabel->setText("Destination card not found!");
         return;
     }
 
     if (date.toStdString() > origin->getExpirationDate()) {
-        ui->statusLabel->setText("کارت منقضی شده!");
+        ui->statusLabel->setText("orgin card expired !");
         return;
     }
 
@@ -56,21 +56,21 @@ void TransferWindow::on_transferButton_clicked()
 
     CardToCard* recent = CardToCardS.search(temp.display());
     if (amount > 3000000 || total > origin->getBalance() || (recent && recent->getAmount() + amount > 6000000)) {
-        ui->statusLabel->setText("مبلغ بیش از حد مجاز یا موجودی ناکافی!");
+        ui->statusLabel->setText("Amount over limit or balance!");
         return;
     }
 
     if (amount <= 100000) {
         if (password.toStdString() != origin->getStaticSecondPassword()) {
-            ui->statusLabel->setText("رمز دوم اشتباه است!");
+            ui->statusLabel->setText("Incorrect password!");
             return;
         }
     } else {
         std::string dynPass = origin->generateRandomDigits(6);
         origin->setDynamicSecondPassword(dynPass);
-        QMessageBox::information(this, "رمز پویا", QString::fromStdString("رمز دوم پویا: " + dynPass));
+        QMessageBox::information(this, "Dynamic", QString::fromStdString("Dynamic password: " + dynPass));
         if (password.toStdString() != dynPass) {
-            ui->statusLabel->setText("رمز پویا اشتباه است!");
+            ui->statusLabel->setText("Incorrect password!");
             return;
         }
     }
@@ -78,16 +78,15 @@ void TransferWindow::on_transferButton_clicked()
     origin->setBalance(origin->getBalance() - total);
     dest->setBalance(dest->getBalance() + amount);
 
-    // ثبت تراکنش در لیست
+
     CardToCard* transaction = new CardToCard();
     transaction->setoriginCardNum(originCard.toStdString());
     transaction->setdate(date.toStdString());
-    // بهتره این مقدارها رو کامل‌تر هم تنظیم کنی
-    // مثلاً amount و destinationCardNum:
-    transaction->setamount(amount); // اگر نیاز شد، setter بنویس
-    // یا اگر خواستی destinationCardNum رو هم ذخیره کنی، باید setter برایش بنویسی
+
+
+    transaction->setamount(amount);
     CardToCardS.add(transaction);
 
 
-    ui->statusLabel->setText("انتقال با موفقیت انجام شد.");
+    ui->statusLabel->setText("Successful transaction.");
 }

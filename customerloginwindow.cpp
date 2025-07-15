@@ -31,12 +31,12 @@ void CustomerLoginWindow::handleLogin()
     CURRENT_COSTUMER = c;
 
     if (c && c->getPassword() == password.toStdString()) {
-        QMessageBox::information(this, "موفق", "ورود موفقیت‌آمیز بود");
+        QMessageBox::information(this, "SUCCESS", "logging in");
         CustomerMainWindow* mainWin = new CustomerMainWindow;
         mainWin->show();
         this->close();
 
     } else {
-        QMessageBox::warning(this, "خطا", "اطلاعات اشتباه است");
+        QMessageBox::warning(this, "ERROR", "Not found");
     }
 }

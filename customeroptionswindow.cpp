@@ -21,16 +21,17 @@ CustomerOptionsWindow::~CustomerOptionsWindow()
 #include "customereditwindow.h"
 #include "accounteditwindow.h"
 #include "../Bank/Bank/globals.h"
+#include "../Bank/Bank/Costumer.h"
 
 
 
 void CustomerOptionsWindow::handleCustomer() {
-    CustomerEditWindow* win = new CustomerEditWindow(customer, this);
+    CustomerEditWindow* win = new CustomerEditWindow( this);
     win->show();
 }
 
 void CustomerOptionsWindow::handleCard() {
-    AccountEditWindow* win = new AccountEditWindow(customer, this);
+    AccountEditWindow* win = new AccountEditWindow( this);
     win->show();
 }
 

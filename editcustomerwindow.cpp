@@ -38,5 +38,5 @@ void EditCustomerWindow::on_saveButton_clicked()
     if (!p.isEmpty())
         CURRENT_COSTUMER->setPassword(p.toStdString());
 
-    this->accept(); // بستن فرم
+    this->accept();
 }

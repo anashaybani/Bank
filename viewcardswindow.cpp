@@ -9,7 +9,7 @@ ViewCardsWindow::ViewCardsWindow(QWidget *parent)
     ui->setupUi(this);
 
 
-    // پاک کردن جدول (اگه چیزی داشت)
+
     ui->cardsTable->clearContents();
     ui->cardsTable->setRowCount(0);
 

@@ -42,7 +42,7 @@ void AdminLoginWindow::handleLogin()
 
     if (a1 && a1->getPassword() == pass.toStdString()) {
         QMessageBox::information(this, "SUCCESS", "Logging in");
-        accept(); // فرم بسته می‌شود و به صفحه بعد می‌روی
+        accept();
     } else {
         QMessageBox::warning(this, "ERROR", "Not found");
     }

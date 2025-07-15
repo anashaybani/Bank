@@ -18,7 +18,6 @@ public:
 private:
     Ui::AccountEditWindow *ui;
 
-    void openDeleteCardPage();
     void openAddCardPage();
     void openViewCardPage();
     void openEditCardPage();

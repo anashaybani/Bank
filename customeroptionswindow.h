@@ -1,6 +1,6 @@
 #ifndef CUSTOMEROPTIONSWINDOW_H
 #define CUSTOMEROPTIONSWINDOW_H
-#include "../Bank/Bank/Costumer.h"
+
 #include <QWidget>
 
 namespace Ui {

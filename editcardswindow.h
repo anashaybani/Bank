@@ -29,6 +29,10 @@ private:
     Ui::EditCardsWindow *ui;
 
     void on_editSelectedButton_clicked();
+
+    void on_deleteSelectedButton_clicked();
+
+    void on_closeButton_clicked();
 };
 
 #endif // EDITCARDSWINDOW_H

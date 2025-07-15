@@ -25,8 +25,8 @@ CustomerMainWindow::~CustomerMainWindow()
 
 void CustomerMainWindow::openTransferPage() {
     TransferWindow* transferWin = new TransferWindow(this); // parent قرار می‌دیم برای مدیریت حافظه
-    transferWin->exec(); // اجرا به صورت مودال (مثل dialog)
-    delete transferWin; // بعد از بستن پاک میشه
+    transferWin->exec();
+    delete transferWin;
 }
 
 void CustomerMainWindow::openViewCardsPage() {

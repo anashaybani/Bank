@@ -1,7 +1,7 @@
 #include "adminmainwindow.h"
 #include "ui_adminmainwindow.h"
 
-#include "../Bank/Bank/globals.h"
+
 //#include "customereditwindow.h"
 //#include "admineditwindow.h"
 
@@ -24,12 +24,13 @@ AdminMainWindow::~AdminMainWindow()
 }
 
 
-
+#include "../Bank/Bank/globals.h"
 #include "customeroptionswindow.h"
 #include "newcustomerwindow.h"
 #include "adminoptionswindow.h"
 #include "newadminwindow.h"
 #include <QMessageBox>
+
 
 
 void AdminMainWindow::handleProceed() {
@@ -46,11 +47,11 @@ void AdminMainWindow::handleProceed() {
             if (userType == "Customer") {
                 Costumer* c = COSTUMERS.search(id.toStdString());
                 if (c) {
-                    // اگر مشتری پیدا شد، برو به پنجره گزینه‌ها (حذف / ویرایش)
+                    CURRENT_COSTUMER = c;
                     CustomerOptionsWindow* options = new CustomerOptionsWindow( this);
                     options->show();
                 } else {
-                    // مشتری پیدا نشد، برو به فرم ساخت مشتری جدید
+
                     NewCustomerWindow* newCust = new NewCustomerWindow( this);
                     newCust->show();
                 }
@@ -58,6 +59,8 @@ void AdminMainWindow::handleProceed() {
             else if (userType == "Admin") {
                 Admin* a = ADMINS.search(id.toStdString());
                 if (a) {
+                    SECOND_ADMIN = a;
+
                     AdminOptionsWindow* options = new AdminOptionsWindow( this);
                     options->show();
                 } else {
