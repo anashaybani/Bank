@@ -24,7 +24,7 @@ CustomerMainWindow::~CustomerMainWindow()
 #include "EditCardsWindow.h"
 
 void CustomerMainWindow::openTransferPage() {
-    TransferWindow* transferWin = new TransferWindow(this); // parent قرار می‌دیم برای مدیریت حافظه
+    TransferWindow* transferWin = new TransferWindow(this);
     transferWin->exec();
     delete transferWin;
 }

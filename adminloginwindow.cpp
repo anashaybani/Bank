@@ -1,5 +1,8 @@
 #include "adminloginwindow.h"
 #include "ui_adminloginwindow.h"
+#include "adminmainwindow.h"
+
+
 
 AdminLoginWindow::AdminLoginWindow(QWidget *parent)
     : QDialog(parent)
@@ -24,16 +27,17 @@ AdminLoginWindow::~AdminLoginWindow()
 
 void AdminLoginWindow::handleLogin()
 {
+    Admin* ana = new Admin();
+    ana->setFirstName("ana");
+    ana->setLastName("sh");
+    ana->setAge(19);
+    ana->setNationalCode("1");
+    ana->setUsername("1");
+    ana->setPassword("1");
+    ADMINS.add(ana);
+
     QString card = ui->userLineEdit->text();
     QString pass = ui->passLineEdit->text();
-
-    Admin ana;
-    ana.setFirstName("ana");
-    ana.setLastName("sh");
-    ana.setNationalCode("1");
-    ana.setUsername(ana.getNationalCode());
-    ana.setPassword("1");
-    ADMINS.add(&ana);
 
 
 
@@ -42,7 +46,10 @@ void AdminLoginWindow::handleLogin()
 
     if (a1 && a1->getPassword() == pass.toStdString()) {
         QMessageBox::information(this, "SUCCESS", "Logging in");
-        accept();
+        this->hide();
+        AdminMainWindow* win = new AdminMainWindow( this);
+        win->show();
+
     } else {
         QMessageBox::warning(this, "ERROR", "Not found");
     }

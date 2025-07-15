@@ -1,6 +1,6 @@
 #include "accounteditwindow.h"
 #include "ui_accounteditwindow.h"
-//#include "AddCardWindow.h"
+#include "AddCardWindow.h"
 
 #include "EditCardsWindow.h"
 #include "ViewCardsWindow.h"
@@ -21,14 +21,20 @@ AccountEditWindow::~AccountEditWindow()
     delete ui;
 }
 
-
-
-
+#include "../Bank/Bank/globals.h"
+#include <QMessageBox>
 
 void AccountEditWindow::openAddCardPage() {
-    AddCardWindow* addCardWin = new AddCardWindow(this); // parent قرار می‌دیم برای مدیریت حافظه
-    addCardWin->exec();
-    delete addCardWin;
+
+    if(CURRENT_COSTUMER->getAccountCount() == 5){
+        QMessageBox::warning(this, "ERROR", "Five existing cards!");
+        return;
+    }
+    else{
+        AddCardWindow* addCardWin = new AddCardWindow(this); // parent قرار می‌دیم برای مدیریت حافظه
+        addCardWin->exec();
+        delete addCardWin;
+    }
 }
 
 

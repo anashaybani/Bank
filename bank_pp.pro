@@ -22,6 +22,7 @@ SOURCES += \
     ../Bank/Bank/globals.cpp \
     accounteditwindow.cpp \
     accountoptionswindow.cpp \
+    addcardwindow.cpp \
     adminloginwindow.cpp \
     adminmainwindow.cpp \
     adminoptionswindow.cpp \
@@ -56,6 +57,7 @@ HEADERS += \
     ../Bank/Bank/globals.h \
     accounteditwindow.h \
     accountoptionswindow.h \
+    addcardwindow.h \
     adminloginwindow.h \
     adminmainwindow.h \
     adminoptionswindow.h \
@@ -78,6 +80,7 @@ HEADERS += \
 FORMS += \
     accounteditwindow.ui \
     accountoptionswindow.ui \
+    addcardwindow.ui \
     adminloginwindow.ui \
     adminmainwindow.ui \
     adminoptionswindow.ui \
