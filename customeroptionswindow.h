@@ -20,6 +20,7 @@ private:
     Ui::CustomerOptionsWindow *ui;
     void handleCustomer();
     void handleCard();
+    void on_closeButton_clicked();
 };
 
 #endif // CUSTOMEROPTIONSWINDOW_H

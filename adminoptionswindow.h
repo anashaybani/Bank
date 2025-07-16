@@ -21,6 +21,7 @@ private:
     void on_editButton_clicked();
     void on_showButton_clicked();
     void on_deleteButton_clicked();
+    void on_closeButton_clicked();
 };
 
 #endif // ADMINOPTIONSWINDOW_H

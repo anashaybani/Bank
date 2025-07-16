@@ -14,6 +14,7 @@ EditAdminWindow::EditAdminWindow(QWidget *parent)
     ui->firstNameEdit->setPlaceholderText(QString::fromStdString(SECOND_ADMIN->getFirstName()));
     ui->lastNameEdit->setPlaceholderText(QString::fromStdString(SECOND_ADMIN->getLastName()));
     ui->passwordEdit->setPlaceholderText(QString::fromStdString(SECOND_ADMIN->getPassword()));
+    connect(ui->closeButton, &QPushButton::clicked, this, &EditAdminWindow::on_closeButton_clicked);
 }
 
 EditAdminWindow::~EditAdminWindow()
@@ -39,5 +40,11 @@ void EditAdminWindow::on_saveButton_clicked()
     if (!p.isEmpty())
         SECOND_ADMIN->setPassword(p.toStdString());
 
-    this->accept();
+}
+
+
+
+void EditAdminWindow::on_closeButton_clicked()
+{
+    this->close();
 }

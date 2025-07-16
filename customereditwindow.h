@@ -22,6 +22,7 @@ private:
     void on_deleteButton_clicked();
     void openViewCustomerPage();
     void openEditCustomerPage();
+    void on_closeButton_clicked();
 };
 
 #endif // CUSTOMEREDITWINDOW_H

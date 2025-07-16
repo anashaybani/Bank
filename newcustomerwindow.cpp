@@ -10,6 +10,9 @@ NewCustomerWindow::NewCustomerWindow(QWidget *parent)
     , ui(new Ui::NewCustomerWindow)
 {
     ui->setupUi(this);
+
+    connect(ui->createButton, &QPushButton::clicked, this, &NewCustomerWindow::on_createButton_clicked);
+    connect(ui->closeButton, &QPushButton::clicked, this, &NewCustomerWindow::on_closeButton_clicked);
 }
 
 NewCustomerWindow::~NewCustomerWindow()
@@ -27,7 +30,7 @@ void NewCustomerWindow::on_createButton_clicked()
     QString ID = ui->nationalCodeEdit->text();
     QString pass = ui->passwordEdit->text();
 
-    if (fname.isEmpty() || lname.isEmpty() || pass.isEmpty()) {
+    if (fname.isEmpty() || lname.isEmpty() || pass.isEmpty() || ID.isEmpty()) {
         QMessageBox::warning(this, "ERROR", "Empty field ! ");
         return;
     }
@@ -41,7 +44,15 @@ void NewCustomerWindow::on_createButton_clicked()
     newC->setUsername(ID.toStdString());
 
     COSTUMERS.add(newC);
+    CURRENT_COSTUMER = newC;
 
     QMessageBox::information(this, "SUCCESS", "Customer added ");
-    this->accept();
+    this->close();
+}
+
+
+
+void NewCustomerWindow::on_closeButton_clicked()
+{
+    this->close();
 }

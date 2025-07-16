@@ -13,6 +13,7 @@ CustomerLoginWindow::CustomerLoginWindow(QWidget *parent)
 {
     ui->setupUi(this);
     connect(ui->loginButton, &QPushButton::clicked, this, &CustomerLoginWindow::handleLogin);
+    connect(ui->closeButton, &QPushButton::clicked, this, &CustomerLoginWindow::on_closeButton_clicked);
 
 }
 
@@ -34,9 +35,16 @@ void CustomerLoginWindow::handleLogin()
         QMessageBox::information(this, "SUCCESS", "logging in");
         CustomerMainWindow* mainWin = new CustomerMainWindow;
         mainWin->show();
-        this->close();
+
 
     } else {
         QMessageBox::warning(this, "ERROR", "Not found");
     }
+}
+
+
+
+void CustomerLoginWindow::on_closeButton_clicked()
+{
+    this->close();
 }

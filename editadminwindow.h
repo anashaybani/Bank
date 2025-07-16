@@ -19,6 +19,7 @@ private:
     Ui::EditAdminWindow *ui;
 
     void on_saveButton_clicked();
+    void on_closeButton_clicked();
 };
 
 #endif // EDITADMINWINDOW_H

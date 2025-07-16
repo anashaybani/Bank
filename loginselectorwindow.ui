@@ -14,8 +14,9 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(212, 253, 255);
-background-color: rgb(160, 255, 220);
+   <string notr="true">
+background-color: rgb(160, 240, 220);
+color: rgb(0, 0, 0);
 </string>
   </property>
   <widget class="QLabel" name="label">
@@ -50,7 +51,9 @@ background-color: rgb(183, 255, 191);</string>
    <property name="styleSheet">
     <string notr="true">border-radius:10px;
 background-color: rgb(108, 255, 177);
-color: rgb(0, 0, 0);</string>
+color: rgb(0, 0, 0);
+border:3px solid green;
+f</string>
    </property>
    <property name="text">
     <string>Admin</string>
@@ -68,7 +71,9 @@ color: rgb(0, 0, 0);</string>
    <property name="styleSheet">
     <string notr="true">border-radius:10px;
 background-color: rgb(108, 255, 177);
-color: rgb(0, 0, 0);</string>
+color: rgb(0, 0, 0);
+border:3px solid green;
+</string>
    </property>
    <property name="text">
     <string>Customer</string>

@@ -18,6 +18,7 @@ public:
 private:
     Ui::NewCustomerWindow *ui;
     void on_createButton_clicked();
+    void on_closeButton_clicked();
 };
 
 #endif // NEWCUSTOMERWINDOW_H

@@ -13,14 +13,26 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(210 ,255, 230);
+color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QPushButton" name="customerButton">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>50</y>
-     <width>100</width>
-     <height>33</height>
+     <x>49</x>
+     <y>120</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:5px solid green;
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
    </property>
    <property name="text">
     <string>customer</string>
@@ -29,14 +41,64 @@
   <widget class="QPushButton" name="cardButton">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>50</y>
+     <x>50</x>
+     <y>190</y>
+     <width>100</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:5px solid green;
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string>card</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>40</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:3px solid blue;
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;cuetomer properties&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="closeButton">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>240</y>
      <width>100</width>
      <height>33</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border:3px solid red;
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
+   </property>
    <property name="text">
-    <string>card</string>
+    <string>close</string>
    </property>
   </widget>
  </widget>

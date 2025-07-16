@@ -30,10 +30,12 @@ ViewCardsWindow::ViewCardsWindow(QWidget *parent)
         }
     } else {
         ui->cardsTable->setRowCount(1);
-        ui->cardsTable->setItem(0, 0, new QTableWidgetItem("حسابی"));
-        ui->cardsTable->setItem(0, 1, new QTableWidgetItem("ندارید"));
-        ui->cardsTable->setItem(0, 2, new QTableWidgetItem("ندارید"));
+        ui->cardsTable->setItem(0, 0, new QTableWidgetItem("Account"));
+        ui->cardsTable->setItem(0, 1, new QTableWidgetItem("None"));
+        ui->cardsTable->setItem(0, 2, new QTableWidgetItem("None"));
     }
+
+    connect(ui->closeButton, &QPushButton::clicked, this, &ViewCardsWindow::on_closeButton_clicked);
 
 }
 

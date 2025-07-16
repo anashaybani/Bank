@@ -19,6 +19,7 @@ private:
     Ui::NewAdminWindow *ui;
 
        void on_createButton_clicked();
+    void on_closeButton_clicked();
 };
 
 #endif // NEWADMINWINDOW_H

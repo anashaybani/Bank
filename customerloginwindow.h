@@ -18,6 +18,7 @@ public:
 private:
     Ui::CustomerLoginWindow *ui;
     void handleLogin();
+    void on_closeButton_clicked();
 };
 
 #endif // CUSTOMERLOGINWINDOW_H

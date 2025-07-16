@@ -21,6 +21,7 @@ private:
     void openTransferPage();
     void openViewCardsPage();
     void openEditCardPage();
+    void on_closeButton_clicked();
 };
 
 #endif // CUSTOMERMAINWINDOW_H

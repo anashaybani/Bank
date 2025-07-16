@@ -20,12 +20,14 @@ LoginSelectorWindow::~LoginSelectorWindow()
 
 void LoginSelectorWindow::openCustomerLogin()
 {
-    CustomerLoginWindow *login = new CustomerLoginWindow(this);
+    CustomerLoginWindow *login = new CustomerLoginWindow();
     login->show();
 }
 
 void LoginSelectorWindow::openAdminLogin()
 {
-    AdminLoginWindow *login = new AdminLoginWindow(this);
+    AdminLoginWindow *login = new AdminLoginWindow();
     login->show();
 }
+
+

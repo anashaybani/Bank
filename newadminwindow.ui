@@ -13,14 +13,25 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(238, 250, 255);
+color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>240</x>
      <y>90</y>
-     <width>72</width>
-     <height>24</height>
+     <width>101</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:10px;
+
+color: rgb(0, 0, 0);
+border:4px solid green;
+f</string>
    </property>
    <property name="text">
     <string>password</string>
@@ -29,11 +40,18 @@
   <widget class="QPushButton" name="createButton">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>250</y>
+     <x>280</x>
+     <y>200</y>
      <width>100</width>
      <height>33</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:10px;
+
+color: rgb(0, 0, 0);
+border:3px solid green;
+f</string>
    </property>
    <property name="text">
     <string>create</string>
@@ -42,24 +60,38 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>240</x>
      <y>10</y>
-     <width>72</width>
-     <height>24</height>
+     <width>101</width>
+     <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:10px;
+
+color: rgb(0, 0, 0);
+border:4px solid green;
+f</string>
+   </property>
    <property name="text">
-    <string>national Code</string>
+    <string>national ID</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>10</y>
-     <width>72</width>
-     <height>24</height>
+     <x>20</x>
+     <y>0</y>
+     <width>101</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:10px;
+
+color: rgb(0, 0, 0);
+border:4px solid green;
+f</string>
    </property>
    <property name="text">
     <string>first Name</string>
@@ -88,11 +120,18 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>180</y>
-     <width>72</width>
-     <height>24</height>
+     <x>20</x>
+     <y>170</y>
+     <width>101</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:10px;
+
+color: rgb(0, 0, 0);
+border:4px solid green;
+f</string>
    </property>
    <property name="text">
     <string>age</string>
@@ -101,11 +140,18 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>90</y>
-     <width>72</width>
-     <height>24</height>
+     <x>20</x>
+     <y>80</y>
+     <width>101</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:10px;
+
+color: rgb(0, 0, 0);
+border:4px solid green;
+f</string>
    </property>
    <property name="text">
     <string>last Name</string>
@@ -139,6 +185,26 @@
      <width>113</width>
      <height>32</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="closeButton">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>250</y>
+     <width>100</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:10px;
+
+color: rgb(0, 0, 0);
+border:3px solid red;
+f</string>
+   </property>
+   <property name="text">
+    <string>close</string>
    </property>
   </widget>
  </widget>

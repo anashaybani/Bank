@@ -21,6 +21,7 @@ private:
     void openAddCardPage();
     void openViewCardPage();
     void openEditCardPage();
+    void on_closeButton_clicked();
 
 
 };

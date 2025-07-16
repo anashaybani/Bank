@@ -9,6 +9,8 @@ TransferWindow::TransferWindow(QWidget *parent)
     , ui(new Ui::TransferWindow)
 {
     ui->setupUi(this);
+
+    connect(ui->closeButton, &QPushButton::clicked, this, &TransferWindow::on_closeButton_clicked);
 }
 
 TransferWindow::~TransferWindow()
@@ -89,4 +91,13 @@ void TransferWindow::on_transferButton_clicked()
 
 
     ui->statusLabel->setText("Successful transaction.");
+}
+
+
+
+
+
+void TransferWindow::on_closeButton_clicked()
+{
+    this->close();
 }

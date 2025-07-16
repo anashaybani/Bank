@@ -19,6 +19,7 @@ private:
     Ui::EditCustomerWindow *ui;
 
     void on_saveButton_clicked();
+    void on_closeButton_clicked();
 };
 
 #endif // EDITCUSTOMERWINDOW_H

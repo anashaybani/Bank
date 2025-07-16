@@ -13,14 +13,25 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(245, 239, 255);
+color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QTableWidget" name="cardsTable">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
      <width>381</width>
-     <height>211</height>
+     <height>221</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border:2px solid green;
+</string>
    </property>
    <column>
     <property name="text">
@@ -41,11 +52,18 @@
   <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>230</y>
+     <x>270</x>
+     <y>250</y>
      <width>100</width>
      <height>33</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:10px;
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border:2px solid red;
+</string>
    </property>
    <property name="text">
     <string>close</string>

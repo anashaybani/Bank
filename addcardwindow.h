@@ -21,6 +21,7 @@ private slots:
 private:
     Ui::AddCardWindow *ui;
      void showAccountInfo();
+    void on_closeButton_clicked();
 };
 
 #endif // ADDCARDWINDOW_H

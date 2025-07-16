@@ -13,14 +13,26 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(225, 245, 255);
+color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QComboBox" name="accountTypeCombo">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>40</y>
+     <x>10</x>
+     <y>60</y>
      <width>89</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+</string>
    </property>
    <item>
     <property name="text">
@@ -41,11 +53,19 @@
   <widget class="QPushButton" name="addAccountButton">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>50</y>
+     <x>10</x>
+     <y>160</y>
      <width>100</width>
-     <height>33</height>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:5px solid green;
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
    </property>
    <property name="text">
     <string>add</string>
@@ -54,11 +74,59 @@
   <widget class="QTextEdit" name="cardInfoBox">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>120</y>
+     <x>120</x>
+     <y>90</y>
      <width>271</width>
      <height>161</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:5px solid pink;
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>20</y>
+     <width>151</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;add new account&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="closeButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>250</y>
+     <width>100</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:3px solid red;
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string>close</string>
    </property>
   </widget>
  </widget>

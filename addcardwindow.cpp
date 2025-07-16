@@ -21,6 +21,7 @@ AddCardWindow::AddCardWindow(QWidget *parent)
     ui->accountTypeCombo->addItem("LongTerm ");
     ui->accountTypeCombo->addItem("GharzolHasaneh");
     ui->cardInfoBox->setReadOnly(true);
+    connect(ui->closeButton, &QPushButton::clicked, this, &AddCardWindow::on_closeButton_clicked);
 
 
 }
@@ -78,4 +79,11 @@ void AddCardWindow::showAccountInfo()
     ui->cardInfoBox->setPlainText(info);
 }
 
+
+
+
+void AddCardWindow::on_closeButton_clicked()
+{
+    this->close();
+}
 

@@ -19,6 +19,7 @@ private:
     Ui::AdminMainWindow *ui;
 
     void handleProceed();
+    void on_closeButton_clicked();
 };
 
 #endif // ADMINMAINWINDOW_H

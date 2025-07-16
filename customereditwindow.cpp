@@ -10,6 +10,7 @@ CustomerEditWindow::CustomerEditWindow(QWidget *parent)
 
     connect(ui->editButton, &QPushButton::clicked, this, &CustomerEditWindow::openEditCustomerPage);
     connect(ui->viewButton, &QPushButton::clicked, this, &CustomerEditWindow::openViewCustomerPage);
+    connect(ui->closeButton, &QPushButton::clicked, this, &CustomerEditWindow::on_closeButton_clicked);
 
 }
 
@@ -27,13 +28,13 @@ CustomerEditWindow::~CustomerEditWindow()
 
 
 void CustomerEditWindow::openViewCustomerPage(){
-    ViewCustomerWindow * viewWin = new ViewCustomerWindow(this);
+    ViewCustomerWindow * viewWin = new ViewCustomerWindow();
     viewWin->exec();
     delete viewWin;
 }
 
 void CustomerEditWindow::openEditCustomerPage(){
-    EditCustomerWindow * editWin = new EditCustomerWindow(this);
+    EditCustomerWindow * editWin = new EditCustomerWindow();
     editWin->exec();
     delete editWin;
 }
@@ -50,3 +51,9 @@ void CustomerEditWindow::on_deleteButton_clicked()
     this->close();
 }
 
+
+
+void CustomerEditWindow::on_closeButton_clicked()
+{
+    this->close();
+}

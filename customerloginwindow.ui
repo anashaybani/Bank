@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(230, 245, 255);
+color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QLineEdit" name="passLineEdit">
    <property name="geometry">
     <rect>
@@ -39,11 +43,20 @@
   <widget class="QLabel" name="labelUser">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>40</y>
-     <width>81</width>
-     <height>31</height>
+     <width>101</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:5px solid green;
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;
+</string>
    </property>
    <property name="text">
     <string>username</string>
@@ -52,11 +65,19 @@
   <widget class="QLabel" name="labelPass">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>120</y>
-     <width>81</width>
-     <height>21</height>
+     <width>101</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:5px solid green;
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
    </property>
    <property name="text">
     <string>password</string>
@@ -71,8 +92,37 @@
      <height>33</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+</string>
+   </property>
    <property name="text">
     <string>login</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="closeButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>250</y>
+     <width>100</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:3px solid red;
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string>close</string>
    </property>
   </widget>
  </widget>

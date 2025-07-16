@@ -20,6 +20,7 @@ private:
     Ui::TransferWindow *ui;
 
     void on_transferButton_clicked();
+    void on_closeButton_clicked();
 };
 
 #endif // TRANSFERWINDOW_H

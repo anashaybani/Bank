@@ -15,6 +15,7 @@ AdminMainWindow::AdminMainWindow(QWidget *parent)
     ui->setupUi(this);
 
     connect(ui->proceedButton, &QPushButton::clicked, this, &AdminMainWindow::handleProceed);
+    connect(ui->closeButton, &QPushButton::clicked, this, &AdminMainWindow::on_closeButton_clicked);
 
 }
 
@@ -37,8 +38,6 @@ void AdminMainWindow::handleProceed() {
     QString userType = ui->userTypeCombo->currentText();
     QString id = ui->idLineEdit->text();
 
-    if (userType == "Customer") {
-
             if (id.isEmpty()) {
                 QMessageBox::warning(this, "ERROR", "Enter user ID");
                 return;
@@ -48,11 +47,11 @@ void AdminMainWindow::handleProceed() {
                 Costumer* c = COSTUMERS.search(id.toStdString());
                 if (c) {
                     CURRENT_COSTUMER = c;
-                    CustomerOptionsWindow* options = new CustomerOptionsWindow( this);
+                    CustomerOptionsWindow* options = new CustomerOptionsWindow();
                     options->show();
                 } else {
 
-                    NewCustomerWindow* newCust = new NewCustomerWindow( this);
+                    NewCustomerWindow* newCust = new NewCustomerWindow();
                     newCust->show();
                 }
             }
@@ -61,14 +60,20 @@ void AdminMainWindow::handleProceed() {
                 if (a) {
                     SECOND_ADMIN = a;
 
-                    AdminOptionsWindow* options = new AdminOptionsWindow( this);
+                    AdminOptionsWindow* options = new AdminOptionsWindow();
                     options->show();
                 } else {
-                    NewAdminWindow* newAdmin = new NewAdminWindow( this);
+                    NewAdminWindow* newAdmin = new NewAdminWindow();
                     newAdmin->show();
                 }
             }
-        }
+
 
 }
 
+
+
+void AdminMainWindow::on_closeButton_clicked()
+{
+    this->close();
+}

@@ -10,6 +10,9 @@ NewAdminWindow::NewAdminWindow(QWidget *parent)
     , ui(new Ui::NewAdminWindow)
 {
     ui->setupUi(this);
+
+     connect(ui->createButton, &QPushButton::clicked, this, &NewAdminWindow::on_createButton_clicked);
+    connect(ui->closeButton, &QPushButton::clicked, this, &NewAdminWindow::on_closeButton_clicked);
 }
 
 NewAdminWindow::~NewAdminWindow()
@@ -42,5 +45,12 @@ void NewAdminWindow::on_createButton_clicked()
     ADMINS.add(newC);
 
     QMessageBox::information(this, "SUCCESS", "Customer added ");
-    this->accept();
+    this->close();
+}
+
+
+
+void NewAdminWindow::on_closeButton_clicked()
+{
+    this->close();
 }

@@ -15,6 +15,7 @@ EditCustomerWindow::EditCustomerWindow(QWidget *parent)
     ui->firstNameEdit->setPlaceholderText(QString::fromStdString(CURRENT_COSTUMER->getFirstName()));
     ui->lastNameEdit->setPlaceholderText(QString::fromStdString(CURRENT_COSTUMER->getLastName()));
     ui->passwordEdit->setPlaceholderText(QString::fromStdString(CURRENT_COSTUMER->getPassword()));
+    connect(ui->closeButton, &QPushButton::clicked, this, &EditCustomerWindow::on_closeButton_clicked);
 }
 
 EditCustomerWindow::~EditCustomerWindow()
@@ -38,5 +39,11 @@ void EditCustomerWindow::on_saveButton_clicked()
     if (!p.isEmpty())
         CURRENT_COSTUMER->setPassword(p.toStdString());
 
-    this->accept();
+
+}
+
+
+void EditCustomerWindow::on_closeButton_clicked()
+{
+    this->close();
 }

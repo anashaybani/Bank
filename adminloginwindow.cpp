@@ -11,7 +11,7 @@ AdminLoginWindow::AdminLoginWindow(QWidget *parent)
     ui->setupUi(this);
 
     connect(ui->loginButton, &QPushButton::clicked, this, &AdminLoginWindow::handleLogin);
-
+    connect(ui->closeButton, &QPushButton::clicked, this, &AdminLoginWindow::on_closeButton_clicked);
 }
 
 AdminLoginWindow::~AdminLoginWindow()
@@ -46,12 +46,24 @@ void AdminLoginWindow::handleLogin()
 
     if (a1 && a1->getPassword() == pass.toStdString()) {
         QMessageBox::information(this, "SUCCESS", "Logging in");
-        this->hide();
-        AdminMainWindow* win = new AdminMainWindow( this);
+        this->close();
+
+        AdminMainWindow* win = new AdminMainWindow( );
         win->show();
+
 
     } else {
         QMessageBox::warning(this, "ERROR", "Not found");
     }
+
+}
+
+
+
+
+
+void AdminLoginWindow::on_closeButton_clicked()
+{
+    this->close();
 }
 

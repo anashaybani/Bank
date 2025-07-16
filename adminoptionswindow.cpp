@@ -8,6 +8,13 @@ AdminOptionsWindow::AdminOptionsWindow(QWidget *parent)
     , ui(new Ui::AdminOptionsWindow)
 {
     ui->setupUi(this);
+
+
+    connect(ui->showButton, &QPushButton::clicked, this, &AdminOptionsWindow::on_showButton_clicked);
+    connect(ui->editButton, &QPushButton::clicked, this, &AdminOptionsWindow::on_editButton_clicked);
+    connect(ui->deleteButton, &QPushButton::clicked, this, &AdminOptionsWindow::on_deleteButton_clicked);
+
+    connect(ui->closeButton, &QPushButton::clicked, this, &AdminOptionsWindow::on_closeButton_clicked);
 }
 
 AdminOptionsWindow::~AdminOptionsWindow()
@@ -22,16 +29,16 @@ AdminOptionsWindow::~AdminOptionsWindow()
 
 void AdminOptionsWindow::on_editButton_clicked()
 {
-    EditAdminWindow* editWin = new EditAdminWindow( this);
+    EditAdminWindow* editWin = new EditAdminWindow( );
     editWin->show();
-    this->close();
+
 }
 
 void AdminOptionsWindow::on_showButton_clicked()
 {
-    ShowAdminWindow* infoWin = new ShowAdminWindow( this);
+    ShowAdminWindow* infoWin = new ShowAdminWindow( );
     infoWin->show();
-    this->close();
+
 }
 
 void AdminOptionsWindow::on_deleteButton_clicked()
@@ -39,5 +46,10 @@ void AdminOptionsWindow::on_deleteButton_clicked()
     ADMINS.remove(SECOND_ADMIN->getNationalCode());
     QMessageBox::information(this, "DELETED", "Customer removed ! ");
 
+}
+
+
+void AdminOptionsWindow::on_closeButton_clicked()
+{
     this->close();
 }

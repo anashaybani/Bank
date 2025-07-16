@@ -9,6 +9,7 @@ CustomerOptionsWindow::CustomerOptionsWindow( QWidget *parent)
 
     connect(ui->customerButton, &QPushButton::clicked, this, &CustomerOptionsWindow::handleCustomer);
     connect(ui->cardButton, &QPushButton::clicked, this, &CustomerOptionsWindow::handleCard);
+    connect(ui->closeButton, &QPushButton::clicked, this, &CustomerOptionsWindow::on_closeButton_clicked);
 }
 
 CustomerOptionsWindow::~CustomerOptionsWindow()
@@ -26,12 +27,17 @@ CustomerOptionsWindow::~CustomerOptionsWindow()
 
 
 void CustomerOptionsWindow::handleCustomer() {
-    CustomerEditWindow* win = new CustomerEditWindow( this);
+    CustomerEditWindow* win = new CustomerEditWindow( );
     win->show();
 }
 
 void CustomerOptionsWindow::handleCard() {
-    AccountEditWindow* win = new AccountEditWindow( this);
+    AccountEditWindow* win = new AccountEditWindow( );
     win->show();
 }
 
+
+void CustomerOptionsWindow::on_closeButton_clicked()
+{
+    this->close();
+}

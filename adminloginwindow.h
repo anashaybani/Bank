@@ -19,6 +19,7 @@ private:
     Ui::AdminLoginWindow *ui;
 
     void handleLogin();
+    void on_closeButton_clicked();
 };
 
 #endif // ADMINLOGINWINDOW_H
