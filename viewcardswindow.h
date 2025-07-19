@@ -8,7 +8,7 @@
 #include "../Bank/Bank/LongTermAccount.h"
 #include "../Bank/Bank/JariAccount.h"
 
-
+#include <QButtonGroup>
 #include <QDialog>
 
 namespace Ui {
@@ -25,6 +25,8 @@ public:
 
 private:
     Ui::ViewCardsWindow *ui;
+    QButtonGroup* radioGroup;
+    void on_nextButton_clicked();
     void on_closeButton_clicked();
 };
 

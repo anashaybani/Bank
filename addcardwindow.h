@@ -15,12 +15,10 @@ public:
     explicit AddCardWindow(QWidget *parent = nullptr);
     ~AddCardWindow();
 
-private slots:
-    void on_addCardButton_clicked();
 
 private:
     Ui::AddCardWindow *ui;
-     void showAccountInfo();
+    void on_addCardButton_clicked();
     void on_closeButton_clicked();
 };
 

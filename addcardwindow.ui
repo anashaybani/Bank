@@ -20,8 +20,8 @@ color: rgb(0, 0, 0);</string>
   <widget class="QComboBox" name="accountTypeCombo">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>60</y>
+     <x>40</x>
+     <y>100</y>
      <width>89</width>
      <height>32</height>
     </rect>
@@ -50,11 +50,11 @@ gridline-color: rgb(0, 0, 0);
     </property>
    </item>
   </widget>
-  <widget class="QPushButton" name="addAccountButton">
+  <widget class="QPushButton" name="addCardButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>160</y>
+     <x>260</x>
+     <y>110</y>
      <width>100</width>
      <height>31</height>
     </rect>
@@ -69,24 +69,6 @@ border-radius:10px;</string>
    </property>
    <property name="text">
     <string>add</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="cardInfoBox">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>90</y>
-     <width>271</width>
-     <height>161</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border:5px solid pink;
-font: 10pt &quot;Segoe UI&quot;;
-background: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-gridline-color: rgb(0, 0, 0);
-border-radius:10px;</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -111,8 +93,8 @@ border-radius:10px;</string>
   <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>250</y>
+     <x>260</x>
+     <y>240</y>
      <width>100</width>
      <height>33</height>
     </rect>

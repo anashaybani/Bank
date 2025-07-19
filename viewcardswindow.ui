@@ -17,38 +17,6 @@
    <string notr="true">background-color: rgb(245, 239, 255);
 color: rgb(0, 0, 0);</string>
   </property>
-  <widget class="QTableWidget" name="cardsTable">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>381</width>
-     <height>221</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-border:2px solid green;
-</string>
-   </property>
-   <column>
-    <property name="text">
-     <string>Account Type</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Card Number</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Card Balance</string>
-    </property>
-   </column>
-  </widget>
   <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
@@ -67,6 +35,44 @@ border:2px solid red;
    </property>
    <property name="text">
     <string>close</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="cardsTable">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>381</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>choice</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Card Number</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Card Number</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="nextButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>250</y>
+     <width>100</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>next</string>
    </property>
   </widget>
  </widget>

@@ -4,6 +4,7 @@
 #include "../Bank/Bank/globals.h"
 #include "../Bank/Bank/Admin.h"
 #include <QMessageBox>
+#include "adminoptionswindow.h"
 
 NewAdminWindow::NewAdminWindow(QWidget *parent)
     : QDialog(parent)
@@ -29,7 +30,7 @@ void NewAdminWindow::on_createButton_clicked()
     QString ID = ui->nationalCodeEdit->text();
     QString pass = ui->passwordEdit->text();
 
-    if (fname.isEmpty() || lname.isEmpty() || pass.isEmpty()) {
+    if (fname.isEmpty() || lname.isEmpty() || pass.isEmpty()|| ID.isEmpty()) {
         QMessageBox::warning(this, "ERROR", "Empty field ! ");
         return;
     }
@@ -43,8 +44,11 @@ void NewAdminWindow::on_createButton_clicked()
     newC->setUsername(ID.toStdString());
 
     ADMINS.add(newC);
+    SECOND_ADMIN = newC;
 
     QMessageBox::information(this, "SUCCESS", "Customer added ");
+    AdminOptionsWindow* options = new AdminOptionsWindow();
+    options->show();
     this->close();
 }
 

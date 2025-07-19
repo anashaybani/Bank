@@ -32,7 +32,7 @@ void AccountEditWindow::openAddCardPage() {
         return;
     }
     else{
-        AddCardWindow* addCardWin = new AddCardWindow(); // parent قرار می‌دیم برای مدیریت حافظه
+        AddCardWindow* addCardWin = new AddCardWindow();
         addCardWin->exec();
         delete addCardWin;
     }

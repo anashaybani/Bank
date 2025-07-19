@@ -4,6 +4,7 @@
 #include "../Bank/Bank/globals.h"
 #include "../Bank/Bank/Costumer.h"
 #include <QMessageBox>
+#include "customeroptionswindow.h"
 
 NewCustomerWindow::NewCustomerWindow(QWidget *parent)
     : QDialog(parent)
@@ -47,6 +48,8 @@ void NewCustomerWindow::on_createButton_clicked()
     CURRENT_COSTUMER = newC;
 
     QMessageBox::information(this, "SUCCESS", "Customer added ");
+    CustomerOptionsWindow* options = new CustomerOptionsWindow();
+    options->show();
     this->close();
 }
 
