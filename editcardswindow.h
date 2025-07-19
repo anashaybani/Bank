@@ -10,7 +10,7 @@
 #include "../Bank/Bank/JariAccount.h"
 
 
-
+#include <QButtonGroup>
 #include <QDialog>
 
 namespace Ui {
@@ -27,6 +27,7 @@ public:
 
 private:
     Ui::EditCardsWindow *ui;
+    QButtonGroup* radioGroup;
 
     void on_editSelectedButton_clicked();
 

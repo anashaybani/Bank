@@ -7,7 +7,7 @@ CustomerEditWindow::CustomerEditWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-
+    connect(ui->deleteButton, &QPushButton::clicked, this, &CustomerEditWindow::on_deleteButton_clicked);
     connect(ui->editButton, &QPushButton::clicked, this, &CustomerEditWindow::openEditCustomerPage);
     connect(ui->viewButton, &QPushButton::clicked, this, &CustomerEditWindow::openViewCustomerPage);
     connect(ui->closeButton, &QPushButton::clicked, this, &CustomerEditWindow::on_closeButton_clicked);

@@ -33,6 +33,7 @@ void CustomerLoginWindow::handleLogin()
 
     if (c && c->getPassword() == password.toStdString()) {
         QMessageBox::information(this, "SUCCESS", "logging in");
+        CURRENT_ADMIN = nullptr;
         CustomerMainWindow* mainWin = new CustomerMainWindow;
         mainWin->show();
 

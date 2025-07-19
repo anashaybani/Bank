@@ -93,11 +93,12 @@ border-radius:10px;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">
+    <string notr="true">border:3px solid purple;
 font: 10pt &quot;Segoe UI&quot;;
 background: rgb(255, 255, 255);
 color: rgb(0, 0, 0);
 gridline-color: rgb(0, 0, 0);
+border-radius:10px;
 </string>
    </property>
    <property name="text">

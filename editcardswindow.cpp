@@ -1,7 +1,16 @@
 #include "editcardswindow.h"
 #include "ui_editcardswindow.h"
+#include "accountoptionswindow.h"
 
+#include "../Bank/Bank/Account.h"
+#include "../Bank/Bank/Costumer.h"
+#include "../Bank/Bank/JariAccount.h"
+#include "../Bank/Bank/LongTermAccount.h"
+#include "../Bank/Bank/GharzolHasanehAccount.h"
+#include "../Bank/Bank/globals.h"
 
+#include <QRadioButton>
+#include <QButtonGroup>
 #include <QMessageBox>
 #include <QInputDialog>
 
@@ -12,10 +21,19 @@ EditCardsWindow::EditCardsWindow(QWidget *parent)
     ui->setupUi(this);
 
     connect(ui->closeButton, &QPushButton::clicked, this, &EditCardsWindow::on_closeButton_clicked);
-    
+    connect(ui->editSelectedButton, &QPushButton::clicked, this, &EditCardsWindow::on_editSelectedButton_clicked);
+    connect(ui->deleteSelectedButton, &QPushButton::clicked, this, &EditCardsWindow::on_deleteSelectedButton_clicked);
+
+
+    CURRENT_ACCOUNT = nullptr;
+
+    radioGroup = new QButtonGroup(this);
+
+    radioGroup->setExclusive(true);
 
     ui->cardsTable->clearContents();
     ui->cardsTable->setRowCount(0);
+    ui->cardsTable->setColumnCount(3);
 
     if (CURRENT_COSTUMER && CURRENT_COSTUMER->getAccountCount() > 0) {
         int count = CURRENT_COSTUMER->getAccountCount();
@@ -26,17 +44,23 @@ EditCardsWindow::EditCardsWindow(QWidget *parent)
 
             QTableWidgetItem* typeItem = new QTableWidgetItem(QString::fromStdString(acc->accountType()));
             QTableWidgetItem* cardItem = new QTableWidgetItem(QString::fromStdString(acc->getCardNumber()));
-            QTableWidgetItem* balanceItem = new QTableWidgetItem(QString::number(acc->getBalance()));
 
-            ui->cardsTable->setItem(i, 0, typeItem);
-            ui->cardsTable->setItem(i, 1, cardItem);
-            ui->cardsTable->setItem(i, 2, balanceItem);
+            ui->cardsTable->setItem(i, 1, typeItem);
+            ui->cardsTable->setItem(i, 2, cardItem);
+
+            QRadioButton* radio = new QRadioButton();
+            radioGroup->addButton(radio, i);
+            ui->cardsTable->setCellWidget(i, 0, radio);
+
+            connect(radio, &QRadioButton::toggled, this, [=](bool checked){
+                if (checked) {
+                    CURRENT_ACCOUNT = acc;
+                }
+            });
         }
     } else {
         ui->cardsTable->setRowCount(1);
-        ui->cardsTable->setItem(0, 0, new QTableWidgetItem("Account"));
-        ui->cardsTable->setItem(0, 1, new QTableWidgetItem("None"));
-        ui->cardsTable->setItem(0, 2, new QTableWidgetItem("None"));
+        ui->cardsTable->setItem(0, 1, new QTableWidgetItem("No Account"));
     }
 
 
@@ -51,38 +75,21 @@ EditCardsWindow::~EditCardsWindow()
 }
 
 
+
 void EditCardsWindow::on_editSelectedButton_clicked()
 {
-    int row = ui->cardsTable->currentRow();
 
-    if (row < 0 || row >= CURRENT_COSTUMER->getAccountCount()) {
-        QMessageBox::warning(this, "ERROR", "No card selected!");
+    int selectedId = radioGroup->checkedId();
+    if (selectedId == -1) {
+        QMessageBox::warning(this, "Error", "Please select a card.");
         return;
     }
 
-    Account* acc = CURRENT_COSTUMER->getAccount(row -1);
+    CURRENT_ACCOUNT= CURRENT_COSTUMER->getAccount(selectedId);
 
-    bool ok;
-    QStringList items;
-    items << "pin code" << "second password";
-
-    QString choice = QInputDialog::getItem(this, "SELECT", "chose a field ", items, 0, false, &ok);
-
-    if (ok && !choice.isEmpty()) {
-        if (choice == "pin code") {
-            QString newPin = QInputDialog::getText(this, "NEW PASS", "Enter new pin code:", QLineEdit::Password, "", &ok);
-            if (ok) {
-                acc->setPinCode(newPin.toStdString());
-                QMessageBox::information(this, "SUCCESS", "Pin code edited.");
-            }
-        } else if (choice == "second password") {
-            QString newPass = QInputDialog::getText(this, "NEW PASS", "Enter new second password:", QLineEdit::Password, "", &ok);
-            if (ok) {
-                acc->setStaticSecondPassword(newPass.toStdString());
-                QMessageBox::information(this, "SUCCESS", "Second password edited.");
-            }
-        }
-    }
+    AccountOptionsWindow* cardWin = new AccountOptionsWindow();
+    cardWin->show();
+    this->close();
 }
 
 
@@ -90,29 +97,31 @@ void EditCardsWindow::on_editSelectedButton_clicked()
 
 void EditCardsWindow::on_deleteSelectedButton_clicked()
 {
-    int row = ui->cardsTable->currentRow();
-
-    if (row < 0 || row >= CURRENT_COSTUMER->getAccountCount()) {
-        QMessageBox::warning(this, "ERROR", "No card selected!");
+    int selectedId = radioGroup->checkedId();
+    if (selectedId == -1) {
+        QMessageBox::warning(this, "Error", "Please select a card.");
         return;
     }
 
-    QMessageBox::StandardButton reply;
-    reply = QMessageBox::question(this, "WORNNING", "delete account ?",
-                                  QMessageBox::Yes | QMessageBox::No);
+    else if (CURRENT_ADMIN == nullptr) {
+        QMessageBox::warning(this, "Error", "You do not have access.");
+        return;
+    }
 
-    if (reply == QMessageBox::Yes) {
+    else{
 
-        CURRENT_COSTUMER->deleteAccounts(row - 1);
+        CURRENT_ACCOUNT= CURRENT_COSTUMER->getAccount(selectedId);
+        CURRENT_COSTUMER->deleteAccounts(selectedId);
+        ACCOUNTS.remove(CURRENT_ACCOUNT->getAccountNumber());
+        CURRENT_ACCOUNT= nullptr;
 
         QMessageBox::information(this, "DELETED", "Account deleted.");
 
         EditCardsWindow* newWindow = new EditCardsWindow(this->parentWidget());
         newWindow->show();
         this->close();
-
-
     }
+
 }
 
 

@@ -29,7 +29,7 @@ ViewCardsWindow::ViewCardsWindow(QWidget *parent)
 
     ui->cardsTable->clearContents();
     ui->cardsTable->setRowCount(0);
-    ui->cardsTable->setColumnCount(4);
+    ui->cardsTable->setColumnCount(3);
 
     if (CURRENT_COSTUMER && CURRENT_COSTUMER->getAccountCount() > 0) {
         int count = CURRENT_COSTUMER->getAccountCount();

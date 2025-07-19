@@ -34,17 +34,16 @@ AddCardWindow::~AddCardWindow()
 void AddCardWindow::on_addCardButton_clicked()
 {
 
-
     Account* newAccount = nullptr;
 
     int selectedType = ui->accountTypeCombo->currentIndex();
 
     if (selectedType == 0)
-        newAccount = new JariAccount();
+        newAccount = new GharzolHasanehAccount();
     else if (selectedType == 1)
         newAccount = new LongTermAccount();
     else if (selectedType == 2)
-        newAccount = new GharzolHasanehAccount();
+        newAccount = new JariAccount();
     else {
         QMessageBox::warning(this, "ERROR", "Chise a type.");
         return;
@@ -57,7 +56,7 @@ void AddCardWindow::on_addCardButton_clicked()
 
     ShowAccountInfo* win = new ShowAccountInfo( );
     win->show();
-     this->close();
+    this->close();
     //QMessageBox::information(this, "SUCCESS", "New account added.");
 }
 

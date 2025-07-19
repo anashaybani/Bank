@@ -1,6 +1,8 @@
 #include "customermainwindow.h"
 #include "ui_customermainwindow.h"
 
+#include <QMessageBox>
+
 CustomerMainWindow::CustomerMainWindow(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::CustomerMainWindow)
@@ -31,16 +33,30 @@ void CustomerMainWindow::openTransferPage() {
 }
 
 void CustomerMainWindow::openViewCardsPage() {
-    ViewCardsWindow * viewWin = new ViewCardsWindow();
-    viewWin->exec();
-    delete viewWin;
+    if(CURRENT_COSTUMER->getAccountCount() == 0){
+        QMessageBox::warning(this, "ERROR", "No Accpunt!");
+        return;
+    }
+    else{
+        ViewCardsWindow * viewWin = new ViewCardsWindow();
+        viewWin->exec();
+        delete viewWin;
 
+
+    }
 }
 
-void CustomerMainWindow::openEditCardPage() {
-    EditCardsWindow * editWin = new EditCardsWindow();
-    editWin->exec();
-    delete editWin;
+void CustomerMainWindow::openEditCardPage() {  
+    if(CURRENT_COSTUMER->getAccountCount() == 0){
+        QMessageBox::warning(this, "ERROR", "No Accpunt!");
+        return;
+    }
+    else{
+        EditCardsWindow * editWin = new EditCardsWindow();
+        editWin->exec();
+        delete editWin;
+
+    }
 }
 
 

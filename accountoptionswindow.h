@@ -17,6 +17,9 @@ public:
 
 private:
     Ui::AccountOptionsWindow *ui;
+
+    void on_saveButton_clicked();
+    void on_closeButton_clicked();
 };
 
 #endif // ACCOUNTOPTIONSWINDOW_H

@@ -5,6 +5,7 @@
 #include "../Bank/Bank/globals.h"
 #include "../Bank/Bank/User.h"
 #include "../Bank/Bank/Costumer.h"
+#include <QMessageBox>
 
 EditCustomerWindow::EditCustomerWindow(QWidget *parent)
     : QDialog(parent)
@@ -16,6 +17,7 @@ EditCustomerWindow::EditCustomerWindow(QWidget *parent)
     ui->lastNameEdit->setPlaceholderText(QString::fromStdString(CURRENT_COSTUMER->getLastName()));
     ui->passwordEdit->setPlaceholderText(QString::fromStdString(CURRENT_COSTUMER->getPassword()));
     connect(ui->closeButton, &QPushButton::clicked, this, &EditCustomerWindow::on_closeButton_clicked);
+    connect(ui->saveButton, &QPushButton::clicked, this, &EditCustomerWindow::on_saveButton_clicked);
 }
 
 EditCustomerWindow::~EditCustomerWindow()
@@ -39,6 +41,8 @@ void EditCustomerWindow::on_saveButton_clicked()
     if (!p.isEmpty())
         CURRENT_COSTUMER->setPassword(p.toStdString());
 
+    QMessageBox::information(this, "SUCCESS", "saved");
+    this->close();
 
 }
 

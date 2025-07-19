@@ -17,34 +17,6 @@
    <string notr="true">background-color: rgb(234, 255, 250);
 color: rgb(0, 0, 0);</string>
   </property>
-  <widget class="QTableWidget" name="cardsTable">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>20</y>
-     <width>256</width>
-     <height>192</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border:2px solid green;
-font: 10pt &quot;Segoe UI&quot;;
-background: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-gridline-color: rgb(0, 0, 0);
-</string>
-   </property>
-   <column>
-    <property name="text">
-     <string>Card Number</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Account Type</string>
-    </property>
-   </column>
-  </widget>
   <widget class="QPushButton" name="editSelectedButton">
    <property name="geometry">
     <rect>
@@ -107,6 +79,36 @@ border-radius:10px;</string>
    <property name="text">
     <string>delete</string>
    </property>
+  </widget>
+  <widget class="QTableWidget" name="cardsTable">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>381</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 10pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);</string>
+   </property>
+   <column>
+    <property name="text">
+     <string>choice</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Card Number</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Card Number</string>
+    </property>
+   </column>
   </widget>
  </widget>
  <resources/>

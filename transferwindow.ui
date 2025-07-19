@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>382</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@ color: rgb(0, 0, 0);</string>
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>50</y>
+     <y>70</y>
      <width>131</width>
      <height>32</height>
     </rect>
@@ -37,8 +37,8 @@ border:2px solid green;
   <widget class="QLineEdit" name="originCardEdit">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>50</y>
+     <x>20</x>
+     <y>70</y>
      <width>131</width>
      <height>32</height>
     </rect>
@@ -54,8 +54,8 @@ border:2px solid green;
   <widget class="QLineEdit" name="cvv2Edit">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>110</y>
+     <x>20</x>
+     <y>160</y>
      <width>131</width>
      <height>32</height>
     </rect>
@@ -71,8 +71,8 @@ border:2px solid green;
   <widget class="QLineEdit" name="destCardEdit">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>170</y>
+     <x>20</x>
+     <y>260</y>
      <width>131</width>
      <height>32</height>
     </rect>
@@ -88,8 +88,8 @@ border:2px solid green;
   <widget class="QLineEdit" name="passwordEdit">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>170</y>
+     <x>230</x>
+     <y>260</y>
      <width>131</width>
      <height>32</height>
     </rect>
@@ -105,8 +105,8 @@ border:2px solid green;
   <widget class="QLineEdit" name="amountEdit">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>110</y>
+     <x>230</x>
+     <y>160</y>
      <width>131</width>
      <height>32</height>
     </rect>
@@ -122,8 +122,8 @@ border:2px solid green;
   <widget class="QPushButton" name="transferButton">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>250</y>
+     <x>280</x>
+     <y>320</y>
      <width>100</width>
      <height>33</height>
     </rect>
@@ -162,8 +162,8 @@ f</string>
   <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>250</y>
+     <x>20</x>
+     <y>320</y>
      <width>100</width>
      <height>33</height>
     </rect>
@@ -177,6 +177,132 @@ border:2px solid red;
    </property>
    <property name="text">
     <string>close</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>101</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;orgin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>130</y>
+     <width>101</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;cvv2&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>40</y>
+     <width>101</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;date&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>130</y>
+     <width>101</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;amount&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>220</y>
+     <width>101</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;password&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>220</y>
+     <width>101</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 10pt &quot;Segoe UI&quot;;
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;destination&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>

@@ -41,16 +41,30 @@ void AccountEditWindow::openAddCardPage() {
 
 
 void AccountEditWindow::openEditCardPage() {
-    EditCardsWindow * editWin = new EditCardsWindow();
-    editWin->exec();
-    delete editWin;
+    if(CURRENT_COSTUMER->getAccountCount() == 0){
+        QMessageBox::warning(this, "ERROR", "No Accpunt!");
+        return;
+    }
+    else{
+        EditCardsWindow * editWin = new EditCardsWindow();
+        editWin->exec();
+        delete editWin;
+
+    }
 }
 
 
 void AccountEditWindow::openViewCardPage() {
-    ViewCardsWindow * viewWin = new ViewCardsWindow();
-    viewWin->exec();
-    delete viewWin;
+    if(CURRENT_COSTUMER->getAccountCount() == 0){
+        QMessageBox::warning(this, "ERROR", "No Accpunt!");
+        return;
+    }
+    else{
+        ViewCardsWindow * viewWin = new ViewCardsWindow();
+        viewWin->exec();
+        delete viewWin;
+
+    }
 
 }
 
