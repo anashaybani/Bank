@@ -24,6 +24,7 @@ ShowAccountInfo::ShowAccountInfo(QWidget *parent)
     info += "Account Number: " + QString::fromStdString(CURRENT_ACCOUNT->getAccountNumber()) + "\n";
     info += "Shaba Number: " + QString::fromStdString(CURRENT_ACCOUNT->getShabaNumber()) + "\n";
     info += "Pin Code: " + QString::fromStdString(CURRENT_ACCOUNT->getPinCode()) + "\n";
+    info += "Second Password : " + QString::fromStdString(CURRENT_ACCOUNT->getStaticSecondPassword()) + "\n";
     info += "CVV2: " + QString::fromStdString(CURRENT_ACCOUNT->getCVV2()) + "\n";
     info += "Expiration Date: " + QString::fromStdString(CURRENT_ACCOUNT->getExpirationDate()) + "\n";
     info += "Balance: " + QString::number(CURRENT_ACCOUNT->getBalance()) + "\n";
